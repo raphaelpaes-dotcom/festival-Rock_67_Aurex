@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Rock+Salt&display=swap" rel="stylesheet">
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+    <title>67_Rock-Wow - MONOCHROME FEST</title>
+</head>
+<body>
+    
+    <!-- CABEÇALHO INTEGRADO -->
+    <header>
+        <a href="#inicio" class="brand-logo">MONOCHROME FEST</a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#atracoes">Atrações</a></li>
+                <li><a href="#experiencia">Galeria</a></li>
+                <li><a href="ingressos.html">Ingressos</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="./lineup.html">Artistas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO HERO / APRESENTAÇÃO -->
+    <section id="inicio" class="hero">
+        <div class="hero-title-box">
+            <h1>MONOCHROME ROCK FEST 2026</h1>
+        </div>
+
+        <p class="tagline">"O SOM QUE ECOA NA ESCURIDÃO: A PURA ESSÊNCIA DO ROCK EM ESTADO BRUTO."</p>
+
+        <div class="event-info-bar">
+            <span>📅 14 E 15 DE NOVEMBRO DE 2026</span>
+            <span>📍 ARENA ANHEMBI - SÃO PAULO / SP</span>
+        </div>
+
+        <!-- CONTADOR REGRESSIVO INTERATIVO -->
+        <div class="countdown-container">
+            <div class="countdown-title">CONTAGEM REGRESSIVA PARA A EXPLOSÃO SONORA</div>
+            <div class="countdown-grid">
+                <div class="time-box">
+                    <span class="number" id="days">00</span>
+                    <span class="label">Dias</span>
+                </div>
+                <div class="time-box">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">Horas</span>
+                </div>
+                <div class="time-box">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">Minutos</span>
+                </div>
+                <div class="time-box">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">Segundos</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-group">
+            <a href="ingressos.html" class="btn-main">GARANTA SEU INGRESSO</a>
+            <a href="#atracoes" class="btn-outline">EXPLORAR LINE-UP</a>
+        </div>
+    </section>
+
+    <!-- BARRA DE ESTATÍSTICAS -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <h3>2 DIAS</h3>
+            <p>De Puro Rock & Metal</p>
+        </div>
+        <div class="stat-item">
+            <h3>3 PALCOS</h3>
+            <p>Simultâneos e Imersivos</p>
+        </div>
+        <div class="stat-item">
+            <h3>+30 BANDAS</h3>
+            <p>Nacionais e Internacionais</p>
+        </div>
+        <div class="stat-item">
+            <h3>40 MIL</h3>
+            <p>Apaixonados por Edição</p>
+        </div>
+    </section>
+
+    <!-- ATRAÇÕES PRINCIPAIS EM DESTAQUE -->
+    <main id="atracoes" class="attractions-section">
+        <div class="section-header">
+            <h2>HEADLINERS EM DESTAQUE</h2>
+            <p>Conheça os três pilares que lideram a edição mais pesada e memorável de nossa história</p>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Atração 1 -->
+            <article class="attraction-card">
+                <div class="card-image-wrapper">
+                    <span class="day-tag">SÁBADO - 14/NOV</span>
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=80" alt="Banda Black Echoes tocando guitarra">
+                </div>
+                <div class="card-content">
+                    <h3>BLACK ECHOES</h3>
+                    <div class="card-meta">Palco Principal • 22:00h • Heavy Metal</div>
+                    <p class="card-description">
+                        Pela primeira vez no Brasil com a turnê do novo álbum "Monolith". A banda londrina traz um show visceral marcado por riffs de guitarras pesados.
+                    </p>
+                    <button class="btn-card-details" onclick="openModal('black-echoes')">VER DETALHES & SETLIST</button>
+                </div>
+            </article>
+
+            <!-- Atração 2 -->
+            <article class="attraction-card">
+                <div class="card-image-wrapper">
+                    <span class="day-tag">SÁBADO - 14/NOV</span>
+                    <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1000&q=80" alt="Show da banda Shadows & Noise">
+                </div>
+                <div class="card-content">
+                    <h3>SHADOWS & NOISE</h3>
+                    <div class="card-meta">Palco Underground • 20:30h • Post-Punk</div>
+                    <p class="card-description">
+                        Gigantes do Post-Punk e Rock Gótico europeu, o grupo celebra 20 anos de carreira com um espetáculo conceitual em preto e branco.
+                    </p>
+                    <button class="btn-card-details" onclick="openModal('shadows-noise')">VER DETALHES & SETLIST</button>
+                </div>
+            </article>
+
+            <!-- Atração 3 -->
+            <article class="attraction-card">
+                <div class="card-image-wrapper">
+                    <span class="day-tag">DOMINGO - 15/NOV</span>
+                    <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=80" alt="Vocalista da banda The Nocturnals">
+                </div>
+                <div class="card-content">
+                    <h3>THE NOCTURNALS</h3>
+                    <div class="card-meta">Palco Principal • 21:30h • Grunge / Alt-Rock</div>
+                    <p class="card-description">
+                        A atração de encerramento do festival promete uma experiência enérgica com a fúria e nostalgia do Grunge dos anos 90 e arranjos modernos.
+                    </p>
+                    <button class="btn-card-details" onclick="openModal('the-nocturnals')">VER DETALHES & SETLIST</button>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- GALERIA DE FOTOS DO FESTIVAL -->
+    <section id="experiencia" class="gallery-section">
+        <div class="section-header">
+            <h2>A EXPERIÊNCIA MONOCHROME</h2>
+            <p>Imagens marcantes das edições anteriores do festival</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Multidão no festival">
+                <div class="gallery-caption">A energia incomparável do público</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Guitarrista tocando solo ao vivo">
+                <div class="gallery-caption">Solos épicos e virtuosismo</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Baterista no festival">
+                <div class="gallery-caption">Batidas contundentes no Palco Principal</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=800&q=80" alt="Visão panorâmica do palco">
+                <div class="gallery-caption">Estrutura de iluminação em escala monumental</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL POPUP PARA INFORMAÇÕES DETALHADAS -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModalOnOverlay(event)">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modal-content">
+                <!-- Conteúdo injetado via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-logo brand-logo">MONOCHROME ROCK FEST</div>
+        <ul class="footer-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#atracoes">Atrações</a></li>
+            <li><a href="#experiencia">Galeria</a></li>
+            <li><a href="ingressos.html">Ingressos</a></li>
+            <li><a href="informacoes.html">Informações</a></li>
+        </ul>
+        <p class="copyright">
+            &copy; 2026 MONOCHROME ROCK FEST. TODOS OS DIREITOS RESERVADOS. <br>
+            ARENA ANHEMBI - SÃO PAULO/SP - 14 E 15 DE NOVEMBRO DE 2026.
+        </p>
+    </footer>
+
+    <!-- LÓGICA INTERATIVA EM JAVASCRIPT CORRIGIDA -->
+    <script>
+        const attractionsData = {
+            'black-echoes': {
+                name: 'BLACK ECHOES',
+                meta: 'Sábado, 14 de Novembro • 22:00h • Palco Principal',
+                bio: 'Formada em Londres em 2012, a banda Black Echoes consolidou-se como um dos nomes mais influentes do Heavy Metal moderno. Seu som alia riffs extremamente rápidos, vocais marcantes e uma presença de palco avassaladora.',
+                setlist: ['Intro (Dark Void)', 'Monolith of Stone', 'Screaming Shadows', 'Blackout Symphony', 'Iron Heart', 'Echoes in the Dark (Solo)', 'Final Resistance']
+            },
+            'shadows-noise': {
+                name: 'SHADOWS & NOISE',
+                meta: 'Sábado, 14 de Novembro • 20:30h • Palco Underground',
+                bio: 'Referência do Post-Punk e da cultura Gothic Rock desde o início dos anos 2000, a banda Shadows & Noise cria atmosferas densas e poéticas. Com uma iluminação estritamente em preto e branco e baixos marcantes.',
+                setlist: ['Cold City Lights', 'Velvet Gloom', 'Dancing in Grey', 'Midnight Transmission', 'Silent Cathedral', 'Nocturnal Pulse']
+            },
+            'the-nocturnals': {
+                name: 'THE NOCTURNALS',
+                meta: 'Domingo, 15 de Novembro • 21:30h • Palco Principal',
+                bio: 'O quarteto The Nocturnals traz a energia crua do Grunge noventista mesclada com a agressividade do Rock Alternativo moderno. Conhecidos por performances imprevisíveis.',
+                setlist: ['Rust and Bones', 'Faded Memory', 'Garage Distortion', 'Seattle Rain', 'Unbroken', 'Rebel Yell (Cover Especial)', 'Last Goodbye']
+            }
+        };
+
+        function openModal(id) {
+            const data = attractionsData[id];
+            if (!data) return;
+            const contentHtml = `
+                <div class="modal-header">
+                    <h3>${data.name}</h3>
+                    <p>${data.meta}</p>
+                </div>
+                <div class="modal-body">
+                    <p style="margin-bottom: 1.5rem;">${data.bio}</p>
+                    <div class="setlist-box">
+                        <h4>✦ SETLIST PREVISTA (PROVÁVEL)</h4>
+                        <ol>${data.setlist.map(song => `<li>${song}</li>`).join('')}</ol>
+                    </div>
+                </div>
+            `;
+            document.getElementById('modal-content').innerHTML = contentHtml;
+            document.getElementById('modal-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOnOverlay(event) {
+            if (event.target.id === 'modal-overlay') {
+                closeModal();
+            }
+        }
+
+        // Contador corrigido com os multiplicadores (*) que estavam faltando
+        const festivalDate = new Date('November 14, 2026 14:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = festivalDate - now;
+
+            if (distance < 0) {
+                document.querySelector('.countdown-container').innerHTML = '<h3>O FESTIVAL ESTÁ ACONTECENDO!</h3>';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>

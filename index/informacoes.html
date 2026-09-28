@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monochrome Fest - Informações</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Rock+Salt&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'rock-salt': ['"Rock Salt"', 'cursive'],
+                        'new-rocker': ['"New Rocker"', 'cursive'],
+                    },
+                    colors: {
+                        black: '#000000',
+                        white: '#ffffff',
+                        gray: {
+                            900: '#111111',
+                            800: '#222222',
+                            700: '#333333',
+                            400: '#a3a3a3',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'New Rocker', cursive;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .nav-logo {
+            font-family: 'Rock Salt', cursive;
+            text-transform: uppercase;
+        }
+
+        /* Garante que imagens normais sigam a regra monocromática */
+        img:not(.no-filter) {
+            filter: grayscale(100%);
+        }
+
+        /* Estilo especial para o mapa não quebrar a imersão dark */
+        .map-iframe {
+            filter: grayscale(100%) invert(90%) contrast(1.2);
+            transition: filter 0.3s ease;
+        }
+        
+        .map-iframe:hover {
+            filter: grayscale(100%) invert(90%) contrast(1.5);
+        }
+
+        /* Marcadores personalizados para as listas de regras */
+        .rule-list-allowed li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: #d1d5db;
+        }
+
+        .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'New Rocker', cursive;
+    border: 1px solid #ffffff;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+        .rule-list-allowed li::before {
+            content: '+';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'Rock Salt', cursive;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .rule-list-denied li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: #9ca3af;
+        }
+        .rule-list-denied li::before {
+            content: 'X';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'Rock Salt', cursive;
+            color: #666666;
+            font-weight: bold;
+        }
+
+        /* Decorações geométricas */
+        .border-bracket {
+            position: relative;
+        }
+        .border-bracket::before, .border-bracket::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+        }
+        .border-bracket::before {
+            top: -5px;
+            left: -5px;
+            border-right: none;
+            border-bottom: none;
+        }
+        .border-bracket::after {
+            bottom: -5px;
+            right: -5px;
+            border-left: none;
+            border-top: none;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <header class="border-b-2 border-white p-6 bg-black sticky top-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="#" class="nav-logo text-2xl text-white hover:opacity-75 transition-opacity tracking-widest">
+                MONOCHROME FEST
+            </a>
+            <nav>
+                <ul class="flex flex-wrap justify-center gap-6 md:gap-10">
+                    
+                    <a href="./index.html">INICIO</a>
+                    <a href="./ingressos.html">INGRESSOS</a>
+                    <a href="./faq.html">TIRE SUAS DUVIDAS</a>
+                    
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="py-16 border-b border-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl mb-4">GUIA DE <br> SOBREVIVÊNCIA</h1>
+            <p class="text-xl text-gray-400 font-new-rocker max-w-2xl mx-auto">Tudo que você precisa saber para chegar, curtir e voltar em segurança do caos.</p>
+        </div>
+    </section>
+
+    <main class="flex-grow container mx-auto px-4 py-16 space-y-20">
+        
+        <section id="localizacao" class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="w-full lg:w-1/3 space-y-6">
+                <h2 class="text-3xl border-l-4 border-white pl-4">O LOCAL</h2>
+                <div class="bg-gray-900 p-6 border border-gray-800">
+                    <h3 class="text-xl mb-2">ARENA ANHEMBI</h3>
+                    <p class="text-gray-400 mb-4">
+                        Av. Olavo Fontoura, 1209 <br>
+                        Santana, São Paulo - SP <br>
+                        CEP: 02012-021
+                    </p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block mt-4 px-6 py-2 border border-white hover:bg-white hover:text-black transition-colors font-rock-salt text-xs">
+                        ABRIR NO MAPA
+                    </a>
+                </div>
+            </div>
+            
+            <div class="w-full lg:w-2/3 border-bracket p-2">
+                <!-- Iframe do mapa com classe especial para ficar sombrio -->
+                <iframe class="map-iframe w-full h-[400px]" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.854676451009!2d-46.64177348447814!3d-23.53768406660144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce58607185dc6d%3A0xc3910547746522c0!2sArena%20Anhembi!5e0!3m2!1spt-BR!2sbr!4v1699999999999!5m2!1spt-BR!2sbr" 
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <section id="transporte" class="border-t border-gray-800 pt-16">
+            <h2 class="text-3xl text-center mb-12">COMO CHEGAR</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Metrô -->
+                <div class="text-center p-8 border border-gray-800 hover:border-gray-500 transition-colors bg-gray-900/50">
+                    <div class="text-4xl mb-4">🚇</div>
+                    <h3 class="text-xl mb-4">METRÔ</h3>
+                    <p class="text-gray-400 text-sm">
+                        A estação mais próxima é a <strong>Tietê (Linha 1 - Azul)</strong>. 
+                        De lá, teremos ônibus circulares gratuitos exclusivos do festival (Transfer M-Fest) saindo a cada 15 minutos até a Arena.
+                    </p>
+                </div>
+
+                <!-- App/Taxi -->
+                <div class="text-center p-8 border border-gray-800 hover:border-gray-500 transition-colors bg-gray-900/50">
+                    <div class="text-4xl mb-4">🚗</div>
+                    <h3 class="text-xl mb-4">APPS & TÁXI</h3>
+                    <p class="text-gray-400 text-sm">
+                        Haverá uma área de desembarque e embarque sinalizada na Av. Olavo Fontoura (Portão 28). 
+                        Evite parar em fila dupla para não travar o trânsito do caos.
+                    </p>
+                </div>
+
+                <!-- Carro/Estacionamento -->
+                <div class="text-center p-8 border border-gray-800 hover:border-gray-500 transition-colors bg-gray-900/50">
+                    <div class="text-4xl mb-4">🅿️</div>
+                    <h3 class="text-xl mb-4">ESTACIONAMENTO</h3>
+                    <p class="text-gray-400 text-sm">
+                        O Pavilhão de Exposições possui estacionamento próprio (terceirizado). 
+                        Vagas limitadas. Chegue cedo. Preço único: R$ 60 por dia.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="regras" class="border-t border-gray-800 pt-16">
+            <h2 class="text-3xl text-center mb-12">O QUE PODE E NÃO PODE</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Pode Levar -->
+                <div class="w-full md:w-1/2 bg-gray-900 border-t-4 border-white p-8">
+                    <h3 class="text-2xl mb-6 flex items-center gap-3">
+                        <span class="text-white text-3xl">+</span> PERMITIDO
+                    </h3>
+                    <ul class="rule-list-allowed text-lg">
+                        <li>Ingresso impresso ou digital (app)</li>
+                        <li>Documento original com foto (Obrigatório)</li>
+                        <li>Óculos escuros e protetor solar</li>
+                        <li>Capa de chuva</li>
+                        <li>Carregador portátil (powerbank)</li>
+                        <li>Mochila pequena ou pochete</li>
+                        <li>Copo de água lacrado (até 500ml)</li>
+                        <li>Alimentos industrializados lacrados (bolachas, barras de cereal)</li>
+                    </ul>
+                </div>
+
+                <!-- Não Pode Levar -->
+                <div class="w-full md:w-1/2 bg-gray-900 border-t-4 border-gray-600 p-8">
+                    <h3 class="text-2xl mb-6 flex items-center gap-3 text-gray-400">
+                        <span class="text-gray-500 text-3xl font-rock-salt">X</span> PROIBIDO
+                    </h3>
+                    <ul class="rule-list-denied text-lg">
+                        <li>Garrafas de vidro, plástico rígido ou metal</li>
+                        <li>Objetos cortantes ou pontiagudos</li>
+                        <li>Guarda-chuvas de qualquer tamanho</li>
+                        <li>Substâncias inflamáveis ou corrosivas</li>
+                        <li>Câmeras fotográficas profissionais (lente intercambiável)</li>
+                        <li>Bastão de selfie ou tripés</li>
+                        <li>Correntes grossas ou cintos com rebites grandes</li>
+                        <li>Capacetes de moto</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center text-gray-500 text-sm p-4 border border-gray-800">
+                A organização se reserva o direito de vetar o acesso de qualquer item considerado perigoso pela segurança local.
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-white py-12 bg-black text-center mt-auto">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl mb-6">MONOCHROME FEST</h2>
+            <!-- REDES SOCIAIS -->
+<div class="social-links">
+    <a href="https://www.instagram.com/explore/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://x.com/explore" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+    <a href="https://www.youtube.com/feed/trending" target="_blank" rel="noopener noreferrer">YouTube</a>
+</div>
+            <p class="text-gray-600 text-sm font-new-rocker">
+                &copy; 2026 Monochrome Fest. Todo o barulho reservado. <br>
+                São Paulo - SP
+            </p>
+        </div>
+    </footer>

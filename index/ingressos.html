@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monochrome Fest - Ingressos</title>
+    
+    <!-- Importando as fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Rock+Salt&display=swap" rel="stylesheet">
+    
+    <!-- Importando Tailwind CSS para layout responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configurando Tailwind com as fontes personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'rock-salt': ['"Rock Salt"', 'cursive'],
+                        'new-rocker': ['"New Rocker"', 'cursive'],
+                    },
+                    colors: {
+                        black: '#000000',
+                        white: '#ffffff',
+                        gray: {
+                            900: '#111111',
+                            800: '#222222',
+                            400: '#a3a3a3',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Reset e cores base rigorosas */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'New Rocker', cursive;
+            overflow-x: hidden;
+        }
+
+        /* Títulos com Rock Salt */
+        h1, h2, h3, h4, h5, h6, .nav-logo {
+            font-family: 'Rock Salt', cursive;
+            text-transform: uppercase;
+        }
+
+        /* Filtro de escala de cinza OBRIGATÓRIO para todas as imagens */
+        img {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+
+        /* Efeito de glitch/hover sutil para botões e links */
+        .btn-monochrome {
+            border: 2px solid #ffffff;
+            background-color: transparent;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-monochrome::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn-monochrome:hover::before {
+            left: 0;
+        }
+
+        .btn-monochrome:hover {
+            color: #000000;
+        }
+
+        /* Cartões de ingresso */
+        .ticket-card {
+            border: 1px solid #333;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .ticket-card:hover {
+            transform: translateY(-10px);
+            border-color: #ffffff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .ticket-featured {
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Estilo da lista de benefícios */
+        .benefit-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .benefit-list li::before {
+            content: 'x';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'Rock Salt', cursive;
+            font-size: 0.8rem;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <header class="border-b-2 border-white p-6 bg-black sticky top-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="#" class="nav-logo text-2xl text-white hover:opacity-75 transition-opacity tracking-widest">
+                MONOCHROME FEST
+            </a>
+            <nav>
+                <ul class="flex flex-wrap justify-center gap-6 md:gap-10">
+                    <a href="./index.html">INICIO</a>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="relative py-24 border-b border-gray-800 flex items-center justify-center min-h-[40vh] overflow-hidden">
+        <!-- Background image com overlay escuro -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1540039155733-d6f1c348d400?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Multidão no show de rock" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl mb-6 bg-white text-black inline-block px-4 py-2 transform -skew-x-6">BILHETERIA</h1>
+            <p class="text-xl md:text-3xl text-gray-400 mt-4 font-new-rocker">Garanta seu lugar nas trevas. O som não espera.</p>
+        </div>
+    </section>
+
+    <main class="flex-grow container mx-auto px-4 py-16">
+        
+        <div class="text-center mb-16">
+            <h2 class="text-3xl mb-4 border-b-2 border-white inline-block pb-2">ESCOLHA SEU DESTINO</h2>
+            <p class="text-lg text-gray-400">Lotes limitados. Preços sujeitos a alteração sem aviso prévio.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Ingresso Sábado -->
+            <article class="ticket-card bg-gray-900 p-8 flex flex-col justify-between relative">
+                <div>
+                    <h3 class="text-xl mb-2 text-center pb-4 border-b border-gray-800">DIA 1 - SÁBADO</h3>
+                    <p class="text-gray-400 text-sm text-center mb-6">14 de Novembro</p>
+                    
+                    <div class="text-center mb-8">
+                        <div class="font-rock-salt text-3xl mb-1">R$ 180</div>
+                        <div class="text-sm text-gray-400 font-new-rocker">Meia / Entrada Social</div>
+                        <div class="text-xs text-gray-500 mt-1">Inteira: R$ 360</div>
+                    </div>
+
+                    <ul class="benefit-list text-gray-300 text-sm mb-8">
+                        <li>Acesso Pista Comum</li>
+                        <li>Palco Principal e Submundo</li>
+                        <li>Praça de alimentação</li>
+                    </ul>
+                </div>
+                <button class="btn-monochrome w-full py-4 font-rock-salt text-sm">COMPRAR SÁBADO</button>
+            </article>
+
+            <!-- Ingresso Domingo -->
+            <article class="ticket-card bg-gray-900 p-8 flex flex-col justify-between relative">
+                <div>
+                    <h3 class="text-xl mb-2 text-center pb-4 border-b border-gray-800">DIA 2 - DOMINGO</h3>
+                    <p class="text-gray-400 text-sm text-center mb-6">15 de Novembro</p>
+                    
+                    <div class="text-center mb-8">
+                        <div class="font-rock-salt text-3xl mb-1">R$ 180</div>
+                        <div class="text-sm text-gray-400 font-new-rocker">Meia / Entrada Social</div>
+                        <div class="text-xs text-gray-500 mt-1">Inteira: R$ 360</div>
+                    </div>
+
+                    <ul class="benefit-list text-gray-300 text-sm mb-8">
+                        <li>Acesso Pista Comum</li>
+                        <li>Palco Principal e Submundo</li>
+                        <li>Praça de alimentação</li>
+                    </ul>
+                </div>
+                <button class="btn-monochrome w-full py-4 font-rock-salt text-sm">COMPRAR DOMINGO</button>
+            </article>
+
+            <!-- Passaporte -->
+            <article class="ticket-card ticket-featured bg-black p-8 flex flex-col justify-between relative transform lg:scale-105 z-10">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-black font-rock-salt text-xs px-4 py-1">
+                    MAIS VENDIDO
+                </div>
+                <div>
+                    <h3 class="text-xl mb-2 text-center pb-4 border-b border-gray-800">PASSAPORTE</h3>
+                    <p class="text-gray-400 text-sm text-center mb-6">Sábado & Domingo</p>
+                    
+                    <div class="text-center mb-8">
+                        <div class="font-rock-salt text-4xl mb-1">R$ 320</div>
+                        <div class="text-sm text-gray-400 font-new-rocker">Meia / Entrada Social</div>
+                        <div class="text-xs text-gray-500 mt-1">Inteira: R$ 640</div>
+                    </div>
+
+                    <ul class="benefit-list text-gray-300 text-sm mb-8">
+                        <li>Acesso aos 2 dias de festival</li>
+                        <li>Pulseira de tecido exclusiva</li>
+                        <li>Acesso Pista Comum em ambos</li>
+                        <li>Desconto comparado ao avulso</li>
+                    </ul>
+                </div>
+                <button class="btn-monochrome w-full py-4 font-rock-salt text-sm bg-white text-black hover:bg-black hover:text-white">GARANTIR PASSAPORTE</button>
+            </article>
+
+            <!-- VIP -->
+            <article class="ticket-card bg-gray-900 p-8 flex flex-col justify-between relative">
+                <div>
+                    <h3 class="text-xl mb-2 text-center pb-4 border-b border-gray-800">VIP BACKSTAGE</h3>
+                    <p class="text-gray-400 text-sm text-center mb-6">Por dia de evento</p>
+                    
+                    <div class="text-center mb-8">
+                        <div class="font-rock-salt text-3xl mb-1">R$ 800</div>
+                        <div class="text-sm text-gray-400 font-new-rocker">Preço Único</div>
+                    </div>
+
+                    <ul class="benefit-list text-gray-300 text-sm mb-8">
+                        <li>Entrada exclusiva sem filas</li>
+                        <li>Acesso Front Stage e Lounge</li>
+                        <li>Open Bar (Cerveja, Água, Refri)</li>
+                        <li>Banheiros privativos VIP</li>
+                    </ul>
+                </div>
+                <button class="btn-monochrome w-full py-4 font-rock-salt text-sm">COMPRAR VIP</button>
+            </article>
+        </div>
+    </main>
+
+    <section class="border-t border-gray-800 bg-gray-900 py-16">
+        <div class="container mx-auto px-4">
+            
+            <div class="flex flex-col md:flex-row gap-8 items-center mb-16">
+                <div class="w-full md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Banda tocando ao vivo" class="w-full h-auto border-2 border-white shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
+                </div>
+                <div class="w-full md:w-1/2 space-y-6">
+                    <h2 class="text-2xl">EXPERIÊNCIA PURA. <br> SEM DISTRAÇÕES.</h2>
+                    <p class="text-lg text-gray-300">
+                        O Monochrome Fest celebra a essência do rock em sua forma mais crua. Pedimos que venham vestidos de preto ou branco para imergir completamente na atmosfera do festival.
+                    </p>
+                    <p class="text-lg text-gray-300">
+                        O ingresso social é válido para todos mediante a entrega de 1kg de alimento não perecível na catraca de acesso.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Informações / Regras -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 border-t border-gray-800 pt-12">
+                <div class="p-6 border border-gray-700 hover:border-white transition-colors">
+                    <h4 class="text-lg mb-4 flex items-center gap-2">
+                        <span class="text-2xl font-rock-salt">!</span> MEIA-ENTRADA
+                    </h4>
+                    <p class="text-gray-400 text-sm">
+                        Válida para estudantes, idosos, PCDs, jovens de baixa renda e professores da rede pública, conforme legislação vigente. Documentação exigida na entrada.
+                    </p>
+                </div>
+                
+                <div class="p-6 border border-gray-700 hover:border-white transition-colors">
+                    <h4 class="text-lg mb-4 flex items-center gap-2">
+                        <span class="text-2xl font-rock-salt">!</span> CLASSIFICAÇÃO
+                    </h4>
+                    <p class="text-gray-400 text-sm">
+                        Classificação etária de 16 anos. Menores de 16 anos apenas acompanhados do pai, mãe ou responsável legal pagante.
+                    </p>
+                </div>
+
+                <div class="p-6 border border-gray-700 hover:border-white transition-colors">
+                    <h4 class="text-lg mb-4 flex items-center gap-2">
+                        <span class="text-2xl font-rock-salt">!</span> PAGAMENTO
+                    </h4>
+                    <p class="text-gray-400 text-sm">
+                        Aceitamos Pix, cartões de crédito em até 6x sem juros e boleto. Os ingressos são exclusivamente digitais, via QR Code no app oficial.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="border-t border-white py-12 bg-black text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl mb-6">MONOCHROME FEST</h2>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="text-white hover:text-gray-500 font-rock-salt text-sm">INSTAGRAM</a>
+                <a href="#" class="text-white hover:text-gray-500 font-rock-salt text-sm">TWITTER</a>
+                <a href="#" class="text-white hover:text-gray-500 font-rock-salt text-sm">YOUTUBE</a>
+            </div>
+            <p class="text-gray-600 text-sm font-new-rocker">
+                &copy; 2026 Monochrome Fest. Todo o barulho reservado. <br>
+                São Paulo - SP
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Adiciona um pequeno efeito visual aos botões de compra ao clicar
+        document.querySelectorAll('.btn-monochrome').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const originalText = this.innerText;
+                this.innerText = 'PROCESSANDO...';
+                
+                setTimeout(() => {
+                    this.innerText = 'REDIRECIONANDO...';
+                    // Simulação de redirecionamento para gateway de pagamento
+                    setTimeout(() => {
+                        this.innerText = originalText;
+                    }, 1500);
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

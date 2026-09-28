@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Dúvidas e Contato - MONOCHROME FEST</title>
+</head>
+<body>
+    
+    <!-- CABEÇALHO (Igual ao index) -->
+    <header>
+        <a href="index.html" class="brand-logo">MONOCHROME FEST</a>
+        <nav>
+            <ul>
+                <li><a href="index.html#inicio">Início</a></li>
+                <li><a href="index.html#atracoes">Atrações</a></li>
+                <li><a href="index.html#experiencia">Galeria</a></li>
+                <li><a href="ingressos.html">Ingressos</a></li>
+                <li><a href="faq.html">Tire suas dúvidas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="info-page-container">
+        <!-- SESSÃO FAQ -->
+        <div class="section-header">
+            <h2>DÚVIDAS FREQUENTES (FAQ)</h2>
+            <p>Tudo o que você precisa saber antes de entrar na roda punk</p>
+        </div>
+
+        <section class="faq-container">
+            <details class="faq-item">
+                <summary>1. Qual é a classificação etária do festival?</summary>
+                <div class="faq-answer">
+                    <p>A classificação indicativa é de 16 anos. Menores de 16 anos só poderão entrar acompanhados pelos pais ou responsáveis legais (comprovação via documento original).</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>2. Posso levar comida ou bebida de fora?</summary>
+                <div class="faq-answer">
+                    <p>Não é permitida a entrada de alimentos e bebidas abertos. É liberada apenas a entrada de garrafas de água plásticas transparentes e lacradas (até 500ml) e alimentos industrializados fechados (como barrinhas de cereal).</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>3. Haverá estacionamento no local?</summary>
+                <div class="faq-answer">
+                    <p>Sim, o complexo do Anhembi possui estacionamento terceirizado, mas as vagas são limitadas. Recomendamos fortemente o uso de transporte público (metrô Tietê) ou carros de aplicativo.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>4. Quais as formas de pagamento dentro do evento?</summary>
+                <div class="faq-answer">
+                    <p>O festival será 100% *Cashless*. Você receberá ou poderá adquirir uma pulseira NFC na entrada, que deverá ser carregada com créditos (via PIX, débito ou crédito) para a compra de comida, bebida e merchandising.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>5. O que é PROIBIDO levar?</summary>
+                <div class="faq-answer">
+                    <p>Correntes pesadas, objetos pontiagudos, guarda-chuvas, capacetes, câmeras fotográficas profissionais (com lente intercambiável), bastão de selfie, substâncias ilícitas e qualquer tipo de arma.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary>6. Vai ter guarda-volumes?</summary>
+                <div class="faq-answer">
+                    <p>Sim! Teremos *Lockers* (guarda-volumes) disponíveis para locação. Você pode alugar antecipadamente pelo nosso site ou direto no local (sujeito à disponibilidade).</p>
+                </div>
+            </details>
+        </section>
+
+        <!-- SESSÃO DE CONTATO -->
+        <div class="section-header" style="margin-top: 5rem;">
+            <h2>FALE COM A PRODUÇÃO</h2>
+            <p>Não encontrou o que procurava? Mande um sinal de fumaça (ou use o formulário abaixo).</p>
+        </div>
+
+        <section class="contact-section">
+            <form action="#" class="contact-form">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="nome@exemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto">Assunto</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="">Selecione uma opção...</option>
+                        <option value="ingressos">Problemas com Ingressos</option>
+                        <option value="pulseira">Dúvidas Cashless</option>
+                        <option value="pcd">Acessibilidade / PCD</option>
+                        <option value="imprensa">Imprensa / Credenciamento</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Sua Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua dúvida aqui..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-main" onclick="event.preventDefault(); alert('Mensagem enviada com sucesso! (Modo de Demonstração)');">ENVIAR MENSAGEM</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- RODAPÉ (Igual ao index) -->
+    <footer>
+        <div class="footer-logo brand-logo">MONOCHROME ROCK FEST</div>
+        <ul class="footer-links">
+            <li><a href="index.html#inicio">Início</a></li>
+            <li><a href="index.html#atracoes">Atrações</a></li>
+            <li><a href="index.html#experiencia">Galeria</a></li>
+            <li><a href="ingressos.html">Ingressos</a></li>
+            <li><a href="faq.html">Informações</a></li>
+        </ul>
+        <p class="copyright">
+            &copy; 2026 MONOCHROME ROCK FEST. TODOS OS DIREITOS RESERVADOS. <br>
+            ARENA ANHEMBI - SÃO PAULO/SP - 14 E 15 DE NOVEMBRO DE 2026.
+        </p>
+    </footer>
+
+</body>
+</html>
